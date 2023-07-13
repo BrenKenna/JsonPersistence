@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Model;
+package com.mycompany.jsonpersistence.model;
 
 
 import org.json.JSONObject;
@@ -66,9 +66,9 @@ public class Person {
         this.id = (int) input.get("Id");
         this.fName = (String) input.get("First Name");
         this.lName = (String) input.get("Last Name");
-        this.mInitial = (char) input.get("Middle Initial");
+        this.mInitial = input.get("Middle Initial").toString().charAt(0);
         this.active = (boolean) input.get("Active");
-        this.rank = (double) input.get("Rank");
+        this.rank = Double.parseDouble(input.get("Rank").toString());
         getNextId();
     }
     
@@ -82,7 +82,7 @@ public class Person {
         output.put("Id", this.id);
         output.put("First Name", this.fName);
         output.put("Last Name", this.lName);
-        output.put("Middle Initial", this.mInitial);
+        output.put("Middle Initial", String.valueOf(this.mInitial));
         output.put("Active", this.active);
         output.put("Rank", this.rank);
         return output;

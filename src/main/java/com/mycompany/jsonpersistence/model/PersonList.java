@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Model;
+package com.mycompany.jsonpersistence.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,10 +33,9 @@ public class PersonList {
      */
     public PersonList(JSONArray data) {
         this.personList = new ArrayList<>();
-        while ( data.length() > 0 ) {
+        while ( data.toList().size() > 0 ) {
             JSONObject elm = (JSONObject) data.remove(0);
-            Person record = new Person(elm);
-            this.personList.add(record);
+            this.personList.add( new Person(elm));
         }
     }
     
@@ -49,10 +48,17 @@ public class PersonList {
         return this.personList.remove(record);
     }
     
-    public List<Person> getPersonLists() {
+    public List<Person> getPersonList() {
         return this.personList;
     }
     
+    
+    public Person getPersonAt(int ind) {
+        if ( ind < 0 || ind > personList.size() -1 ) {
+            return null;
+        }
+        return personList.get(ind);
+    }
     
     /**
      * Convert person list to JSON, order does not matter because

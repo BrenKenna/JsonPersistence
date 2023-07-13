@@ -1,0 +1,419 @@
+
+Creating Person Collection Objects of size:
+N=15
+
+
+Reference Person:
+    Person{id=0, fName=Sarah, lName=Montgomery, mInitial=M, active=true, rank=2.6182733543233723}
+
+Reference JSON Person:
+    {"Middle Initial":"M","Active":true,"First Name":"Sarah","Rank":2.6182733543233723,"Id":0,"Last Name":"Montgomery"}
+
+
+__________________________________________________________
+
+Converting PersonList to JSON Array
+[
+    {
+        "Middle Initial": "M",
+        "Active": true,
+        "First Name": "Sarah",
+        "Rank": 2.6182733543233723,
+        "Id": 0,
+        "Last Name": "Montgomery"
+    },
+    {
+        "Middle Initial": "H",
+        "Active": true,
+        "First Name": "Sarah",
+        "Rank": 2.0484213657481822,
+        "Id": 1,
+        "Last Name": "Harris"
+    },
+    {
+        "Middle Initial": "M",
+        "Active": false,
+        "First Name": "Danielle",
+        "Rank": 10.107497401610543,
+        "Id": 2,
+        "Last Name": "Montgomery"
+    },
+    {
+        "Middle Initial": "Z",
+        "Active": true,
+        "First Name": "Tom",
+        "Rank": 6.456546020366638,
+        "Id": 3,
+        "Last Name": "Ziff"
+    },
+    {
+        "Middle Initial": "B",
+        "Active": true,
+        "First Name": "Michelle",
+        "Rank": 2.5680034002199346,
+        "Id": 4,
+        "Last Name": "Berkhiem"
+    },
+    {
+        "Middle Initial": "E",
+        "Active": false,
+        "First Name": "Mary",
+        "Rank": 7.839685604894653,
+        "Id": 5,
+        "Last Name": "East"
+    },
+    {
+        "Middle Initial": "B",
+        "Active": false,
+        "First Name": "Danielle",
+        "Rank": 10.25022651921988,
+        "Id": 6,
+        "Last Name": "Bond"
+    },
+    {
+        "Middle Initial": "S",
+        "Active": false,
+        "First Name": "Michael",
+        "Rank": 5.864916906607716,
+        "Id": 7,
+        "Last Name": "Skywalker"
+    },
+    {
+        "Middle Initial": "E",
+        "Active": false,
+        "First Name": "Michelle",
+        "Rank": 3.519281469018792,
+        "Id": 8,
+        "Last Name": "East"
+    },
+    {
+        "Middle Initial": "D",
+        "Active": true,
+        "First Name": "Michael",
+        "Rank": 1.8970573296948636,
+        "Id": 9,
+        "Last Name": "Doe"
+    },
+    {
+        "Middle Initial": "D",
+        "Active": false,
+        "First Name": "Elizabeth",
+        "Rank": 6.633248771955843,
+        "Id": 10,
+        "Last Name": "Doe"
+    },
+    {
+        "Middle Initial": "B",
+        "Active": true,
+        "First Name": "Harry",
+        "Rank": 6.616676756884631,
+        "Id": 11,
+        "Last Name": "Bakker"
+    },
+    {
+        "Middle Initial": "J",
+        "Active": true,
+        "First Name": "Harry",
+        "Rank": 4.917387598074974,
+        "Id": 12,
+        "Last Name": "Jones"
+    },
+    {
+        "Middle Initial": "H",
+        "Active": false,
+        "First Name": "Sarah",
+        "Rank": 7.49507031392613,
+        "Id": 13,
+        "Last Name": "Harris"
+    },
+    {
+        "Middle Initial": "D",
+        "Active": true,
+        "First Name": "Elizabeth",
+        "Rank": 4.256835950059233,
+        "Id": 14,
+        "Last Name": "Doe"
+    }
+]
+
+
+__________________________________________________________
+
+
+
+Converting PersonList to JSON Object
+{
+    "22": {
+        "Middle Initial": "J",
+        "Active": true,
+        "First Name": "Jane",
+        "Rank": 4.1306215043925745,
+        "Id": 22,
+        "Last Name": "Jones"
+    },
+    "23": {
+        "Middle Initial": "B",
+        "Active": false,
+        "First Name": "Alice",
+        "Rank": 7.630621689157971,
+        "Id": 23,
+        "Last Name": "Baggins"
+    },
+    "24": {
+        "Middle Initial": "J",
+        "Active": false,
+        "First Name": "Jane",
+        "Rank": 5.750691751926794,
+        "Id": 24,
+        "Last Name": "Jones"
+    },
+    "25": {
+        "Middle Initial": "B",
+        "Active": true,
+        "First Name": "Alex",
+        "Rank": 9.68021924287565,
+        "Id": 25,
+        "Last Name": "Bakker"
+    },
+    "15": {
+        "Middle Initial": "B",
+        "Active": true,
+        "First Name": "John",
+        "Rank": 3.0671954427099113,
+        "Id": 15,
+        "Last Name": "Berkhiem"
+    },
+    "26": {
+        "Middle Initial": "Z",
+        "Active": false,
+        "First Name": "Danielle",
+        "Rank": 2.527420145560665,
+        "Id": 26,
+        "Last Name": "Ziff"
+    },
+    "16": {
+        "Middle Initial": "B",
+        "Active": false,
+        "First Name": "Danielle",
+        "Rank": 9.913843016664737,
+        "Id": 16,
+        "Last Name": "Baggins"
+    },
+    "27": {
+        "Middle Initial": "B",
+        "Active": false,
+        "First Name": "Jane",
+        "Rank": 2.420154128250405,
+        "Id": 27,
+        "Last Name": "Burns"
+    },
+    "17": {
+        "Middle Initial": "B",
+        "Active": false,
+        "First Name": "Penelope",
+        "Rank": 3.525604750266717,
+        "Id": 17,
+        "Last Name": "Baggins"
+    },
+    "28": {
+        "Middle Initial": "D",
+        "Active": true,
+        "First Name": "Harry",
+        "Rank": 6.24017481413985,
+        "Id": 28,
+        "Last Name": "Doe"
+    },
+    "18": {
+        "Middle Initial": "D",
+        "Active": false,
+        "First Name": "Harry",
+        "Rank": 10.608563467634639,
+        "Id": 18,
+        "Last Name": "Doe"
+    },
+    "29": {
+        "Middle Initial": "D",
+        "Active": false,
+        "First Name": "Michelle",
+        "Rank": 1.8820689623219362,
+        "Id": 29,
+        "Last Name": "Doe"
+    },
+    "19": {
+        "Middle Initial": "B",
+        "Active": false,
+        "First Name": "Lisa",
+        "Rank": 5.635678458192878,
+        "Id": 19,
+        "Last Name": "Burns"
+    },
+    "20": {
+        "Middle Initial": "Z",
+        "Active": true,
+        "First Name": "Alice",
+        "Rank": 6.618317474186275,
+        "Id": 20,
+        "Last Name": "Ziff"
+    },
+    "21": {
+        "Middle Initial": "M",
+        "Active": false,
+        "First Name": "Michelle",
+        "Rank": 9.61516204932016,
+        "Id": 21,
+        "Last Name": "Montgomery"
+    }
+}
+
+__________________________________________________________
+
+
+Compressing PersonList
+Initial Length:			1698
+Compressed Length:		500
+Displaying Compressed String:   [B@60015ef5
+
+__________________________________________________________
+
+
+Decompressing compressed PersonList
+Decompressed Length:			1698
+Displaying Decompressed String:
+[{"Middle Initial":"M","Active":true,"First Name":"Sarah","Rank":2.6182733543233723,"Id":0,"Last Name":"Montgomery"}, ...]
+
+__________________________________________________________
+
+
+Rebuilding PersonList from Decompressed String:
+
+Displaying JSON Array of Rebuild:
+[{"Middle Initial":"M","Active":true,"First Name":"Sarah","Rank":2.6182733543233723,"Id":0,"Last Name":"Montgomery"} ...]
+
+__________________________________________________________
+
+Initial PersonList Size:	15
+Rebuild Size:                   15
+Displaying Rebuilt PersonList:
+
+[
+    {
+        "Middle Initial": "M",
+        "Active": true,
+        "First Name": "Sarah",
+        "Rank": 2.6182733543233723,
+        "Id": 0,
+        "Last Name": "Montgomery"
+    },
+    {
+        "Middle Initial": "H",
+        "Active": true,
+        "First Name": "Sarah",
+        "Rank": 2.0484213657481822,
+        "Id": 1,
+        "Last Name": "Harris"
+    },
+    {
+        "Middle Initial": "M",
+        "Active": false,
+        "First Name": "Danielle",
+        "Rank": 10.107497401610543,
+        "Id": 2,
+        "Last Name": "Montgomery"
+    },
+    {
+        "Middle Initial": "Z",
+        "Active": true,
+        "First Name": "Tom",
+        "Rank": 6.456546020366638,
+        "Id": 3,
+        "Last Name": "Ziff"
+    },
+    {
+        "Middle Initial": "B",
+        "Active": true,
+        "First Name": "Michelle",
+        "Rank": 2.5680034002199346,
+        "Id": 4,
+        "Last Name": "Berkhiem"
+    },
+    {
+        "Middle Initial": "E",
+        "Active": false,
+        "First Name": "Mary",
+        "Rank": 7.839685604894653,
+        "Id": 5,
+        "Last Name": "East"
+    },
+    {
+        "Middle Initial": "B",
+        "Active": false,
+        "First Name": "Danielle",
+        "Rank": 10.25022651921988,
+        "Id": 6,
+        "Last Name": "Bond"
+    },
+    {
+        "Middle Initial": "S",
+        "Active": false,
+        "First Name": "Michael",
+        "Rank": 5.864916906607716,
+        "Id": 7,
+        "Last Name": "Skywalker"
+    },
+    {
+        "Middle Initial": "E",
+        "Active": false,
+        "First Name": "Michelle",
+        "Rank": 3.519281469018792,
+        "Id": 8,
+        "Last Name": "East"
+    },
+    {
+        "Middle Initial": "D",
+        "Active": true,
+        "First Name": "Michael",
+        "Rank": 1.8970573296948636,
+        "Id": 9,
+        "Last Name": "Doe"
+    },
+    {
+        "Middle Initial": "D",
+        "Active": false,
+        "First Name": "Elizabeth",
+        "Rank": 6.633248771955843,
+        "Id": 10,
+        "Last Name": "Doe"
+    },
+    {
+        "Middle Initial": "B",
+        "Active": true,
+        "First Name": "Harry",
+        "Rank": 6.616676756884631,
+        "Id": 11,
+        "Last Name": "Bakker"
+    },
+    {
+        "Middle Initial": "J",
+        "Active": true,
+        "First Name": "Harry",
+        "Rank": 4.917387598074974,
+        "Id": 12,
+        "Last Name": "Jones"
+    },
+    {
+        "Middle Initial": "H",
+        "Active": false,
+        "First Name": "Sarah",
+        "Rank": 7.49507031392613,
+        "Id": 13,
+        "Last Name": "Harris"
+    },
+    {
+        "Middle Initial": "D",
+        "Active": true,
+        "First Name": "Elizabeth",
+        "Rank": 4.256835950059233,
+        "Id": 14,
+        "Last Name": "Doe"
+    }
+]

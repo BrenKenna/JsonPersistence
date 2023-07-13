@@ -2,10 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Model;
+package com.mycompany.jsonpersistence.model;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
+import org.json.JSONObject;
 
 /**
  *
@@ -21,6 +23,17 @@ public class PersonMap {
     
     public PersonMap(Map<Integer, Person> data) {
         this.personMap = data;
+    }
+    
+    
+    public JSONObject toJson() {
+        JSONObject output = new JSONObject();
+        for (Entry<Integer, Person> elm : personMap.entrySet() ) {
+            int id = elm.getKey();
+            Person record = elm.getValue();
+            output.put(String.valueOf(id), record.toJson());
+        }
+        return output;
     }
     
     
