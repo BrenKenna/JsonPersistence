@@ -417,3 +417,296 @@ Displaying Rebuilt PersonList:
         "Last Name": "Doe"
     }
 ]
+
+
+__________________________________________________________
+
+Write a compressed Map of PersonList to ZIP
+
+
+Compressing a Mock Database:
+Table 'table-1' Compressed Size:	390
+Table 'table-2' Compressed Size:	392
+Table 'table-3' Compressed Size:	386
+
+Zipping DB to file:	personDB.out.zip
+Initializing output file handlers
+Adding each table to output zip
+Processing table:	table-1
+Processing table:	table-2
+Processing table:	table-3
+
+Compression complete, closing output zip handler
+
+-----------------------------------------
+
+Unzipping:	personDB.out.zip
+
+Fetched table 'table-1' from zip:	Size = 390
+Adding record to the compressed table holder
+Decompressing data
+[
+    {
+        "Middle Initial": "B",
+        "Active": false,
+        "First Name": "John",
+        "Rank": 4.2398071853542945,
+        "Id": 60,
+        "Last Name": "Baggins"
+    },
+    {
+        "Middle Initial": "Z",
+        "Active": true,
+        "First Name": "Penelope",
+        "Rank": 4.4015465795549975,
+        "Id": 61,
+        "Last Name": "Ziff"
+    },
+    {
+        "Middle Initial": "H",
+        "Active": false,
+        "First Name": "Tim",
+        "Rank": 5.173385248826849,
+        "Id": 62,
+        "Last Name": "Hamilton"
+    },
+    {
+        "Middle Initial": "C",
+        "Active": true,
+        "First Name": "Sarah",
+        "Rank": 5.720869704851459,
+        "Id": 63,
+        "Last Name": "Collins"
+    },
+    {
+        "Middle Initial": "E",
+        "Active": true,
+        "First Name": "Penelope",
+        "Rank": 7.872671813523109,
+        "Id": 64,
+        "Last Name": "East"
+    },
+    {
+        "Middle Initial": "E",
+        "Active": false,
+        "First Name": "Sarah",
+        "Rank": 2.3516792827121904,
+        "Id": 65,
+        "Last Name": "East"
+    },
+    {
+        "Middle Initial": "B",
+        "Active": true,
+        "First Name": "Jane",
+        "Rank": 10.192973895598326,
+        "Id": 66,
+        "Last Name": "Bakker"
+    },
+    {
+        "Middle Initial": "S",
+        "Active": false,
+        "First Name": "Alice",
+        "Rank": 3.8707790276313285,
+        "Id": 67,
+        "Last Name": "Sizlack"
+    },
+    {
+        "Middle Initial": "J",
+        "Active": true,
+        "First Name": "Martin",
+        "Rank": 3.292475408165761,
+        "Id": 68,
+        "Last Name": "Jones"
+    },
+    {
+        "Middle Initial": "S",
+        "Active": false,
+        "First Name": "John",
+        "Rank": 1.319695659971516,
+        "Id": 69,
+        "Last Name": "Sizlack"
+    }
+]
+
+Converting JSON Array back into PersonList
+Records added back in = 10
+
+
+Fetched table 'table-2' from zip:	Size = 392
+Adding record to the compressed table holder
+Decompressing data
+[
+    {
+        "Middle Initial": "Z",
+        "Active": true,
+        "First Name": "Lisa",
+        "Rank": 8.107936414126923,
+        "Id": 70,
+        "Last Name": "Ziff"
+    },
+    {
+        "Middle Initial": "C",
+        "Active": false,
+        "First Name": "Tim",
+        "Rank": 10.531699792974736,
+        "Id": 71,
+        "Last Name": "Collins"
+    },
+    {
+        "Middle Initial": "E",
+        "Active": true,
+        "First Name": "Harry",
+        "Rank": 2.8928251085019463,
+        "Id": 72,
+        "Last Name": "East"
+    },
+    {
+        "Middle Initial": "M",
+        "Active": true,
+        "First Name": "Penelope",
+        "Rank": 2.2978989139023716,
+        "Id": 73,
+        "Last Name": "Montgomery"
+    },
+    {
+        "Middle Initial": "B",
+        "Active": true,
+        "First Name": "Danielle",
+        "Rank": 9.821628511481837,
+        "Id": 74,
+        "Last Name": "Bathory"
+    },
+    {
+        "Middle Initial": "S",
+        "Active": true,
+        "First Name": "Danielle",
+        "Rank": 9.405378915871934,
+        "Id": 75,
+        "Last Name": "Skywalker"
+    },
+    {
+        "Middle Initial": "S",
+        "Active": true,
+        "First Name": "Michael",
+        "Rank": 8.254335163389708,
+        "Id": 76,
+        "Last Name": "Simpson"
+    },
+    {
+        "Middle Initial": "E",
+        "Active": false,
+        "First Name": "Harry",
+        "Rank": 2.8773902737665265,
+        "Id": 77,
+        "Last Name": "East"
+    },
+    {
+        "Middle Initial": "E",
+        "Active": false,
+        "First Name": "Bill",
+        "Rank": 7.393887704782326,
+        "Id": 78,
+        "Last Name": "East"
+    },
+    {
+        "Middle Initial": "B",
+        "Active": true,
+        "First Name": "Elizabeth",
+        "Rank": 4.977577886007154,
+        "Id": 79,
+        "Last Name": "Bathory"
+    }
+]
+
+Converting JSON Array back into PersonList
+Records added back in = 10
+
+
+Fetched table 'table-3' from zip:	Size = 386
+Adding record to the compressed table holder
+Decompressing data
+[
+    {
+        "Middle Initial": "M",
+        "Active": false,
+        "First Name": "Harry",
+        "Rank": 6.547409550838882,
+        "Id": 80,
+        "Last Name": "Montgomery"
+    },
+    {
+        "Middle Initial": "S",
+        "Active": false,
+        "First Name": "Tim",
+        "Rank": 2.0566348166347836,
+        "Id": 81,
+        "Last Name": "Sizlack"
+    },
+    {
+        "Middle Initial": "D",
+        "Active": true,
+        "First Name": "Penelope",
+        "Rank": 7.702391319051513,
+        "Id": 82,
+        "Last Name": "Doe"
+    },
+    {
+        "Middle Initial": "E",
+        "Active": false,
+        "First Name": "Bill",
+        "Rank": 9.091490753436094,
+        "Id": 83,
+        "Last Name": "East"
+    },
+    {
+        "Middle Initial": "J",
+        "Active": true,
+        "First Name": "Michelle",
+        "Rank": 3.745148447983574,
+        "Id": 84,
+        "Last Name": "Jones"
+    },
+    {
+        "Middle Initial": "J",
+        "Active": true,
+        "First Name": "Sarah",
+        "Rank": 7.778651472894291,
+        "Id": 85,
+        "Last Name": "Jones"
+    },
+    {
+        "Middle Initial": "Z",
+        "Active": true,
+        "First Name": "Amy",
+        "Rank": 6.298087222516488,
+        "Id": 86,
+        "Last Name": "Ziff"
+    },
+    {
+        "Middle Initial": "B",
+        "Active": true,
+        "First Name": "Martin",
+        "Rank": 9.036222706261013,
+        "Id": 87,
+        "Last Name": "Bathory"
+    },
+    {
+        "Middle Initial": "S",
+        "Active": false,
+        "First Name": "Amy",
+        "Rank": 5.316820201825102,
+        "Id": 88,
+        "Last Name": "Skywalker"
+    },
+    {
+        "Middle Initial": "S",
+        "Active": true,
+        "First Name": "Alice",
+        "Rank": 6.823546603659368,
+        "Id": 89,
+        "Last Name": "Skywalker"
+    }
+]
+
+Converting JSON Array back into PersonList
+Records added back in = 10
