@@ -5,6 +5,9 @@
 package com.mycompany.jsonpersistence.model;
 
 import com.mycompany.jsonpersistence.Compression;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -95,5 +98,36 @@ public class mainUtil {
         catch ( Exception ex ) {
             System.out.println("Error (de)compressing person list:\n" + ex);
         }
+    }
+    
+    
+    /**
+     * Convert database to JSON
+     * 
+     * @param database
+     * @return 
+     */
+    public static Map<String, JSONArray> personDbToJson(Map<String, PersonList> database) {
+        Map<String, JSONArray> output = new HashMap();
+        for ( Entry<String, PersonList> table : database.entrySet() ) {
+            output.put(table.getKey(), table.getValue().toJson());
+        }
+        return output;
+    }
+    
+    
+    /**
+     * Convert JSONArray database back into PersonList DB
+     * 
+     * @param database
+     * @return 
+     */
+    public static Map<String, PersonList> jsonDbToPersonList(Map<String, JSONArray> database) {
+        Map<String, PersonList> output = new HashMap();
+        for ( Entry<String, JSONArray> dbElm : database.entrySet() ) {
+            PersonList table = new PersonList(dbElm.getValue());
+            output.put(dbElm.getKey(), table);
+        }
+        return output;
     }
 }

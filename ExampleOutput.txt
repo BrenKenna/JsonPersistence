@@ -425,288 +425,271 @@ Write a compressed Map of PersonList to ZIP
 
 
 Compressing a Mock Database:
-Table 'table-1' Compressed Size:	390
-Table 'table-2' Compressed Size:	392
+
+Compressing database
+Table 'table-1' Compressed Size:	375
+Table 'table-2' Compressed Size:	375
 Table 'table-3' Compressed Size:	386
 
-Zipping DB to file:	personDB.out.zip
-Initializing output file handlers
-Adding each table to output zip
-Processing table:	table-1
-Processing table:	table-2
-Processing table:	table-3
+Zipping Database to file
+Zip state:	true
 
-Compression complete, closing output zip handler
+Attempting to unzip database:	personDB.out.zip
+Unzip state:	true
+Decompression to Json state:	true
+Rebuild to PersonList DB State: 	true
 
------------------------------------------
 
-Unzipping:	personDB.out.zip
-
-Fetched table 'table-1' from zip:	Size = 390
-Adding record to the compressed table holder
-Decompressing data
+Displaying data from decompressed table:	table-1
 [
     {
-        "Middle Initial": "B",
-        "Active": false,
-        "First Name": "John",
-        "Rank": 4.2398071853542945,
+        "Middle Initial": "D",
+        "Active": true,
+        "First Name": "Lisa",
+        "Rank": 1.930815890547258,
         "Id": 60,
-        "Last Name": "Baggins"
+        "Last Name": "Doe"
     },
     {
-        "Middle Initial": "Z",
-        "Active": true,
-        "First Name": "Penelope",
-        "Rank": 4.4015465795549975,
+        "Middle Initial": "J",
+        "Active": false,
+        "First Name": "Amy",
+        "Rank": 4.709148726267394,
         "Id": 61,
-        "Last Name": "Ziff"
+        "Last Name": "Jones"
+    },
+    {
+        "Middle Initial": "D",
+        "Active": true,
+        "First Name": "Lisa",
+        "Rank": 2.716055997918744,
+        "Id": 62,
+        "Last Name": "Doe"
+    },
+    {
+        "Middle Initial": "S",
+        "Active": true,
+        "First Name": "Harry",
+        "Rank": 8.374797985610105,
+        "Id": 63,
+        "Last Name": "Sizlack"
+    },
+    {
+        "Middle Initial": "C",
+        "Active": false,
+        "First Name": "Lisa",
+        "Rank": 10.262879880099494,
+        "Id": 64,
+        "Last Name": "Collins"
     },
     {
         "Middle Initial": "H",
         "Active": false,
-        "First Name": "Tim",
-        "Rank": 5.173385248826849,
-        "Id": 62,
-        "Last Name": "Hamilton"
-    },
-    {
-        "Middle Initial": "C",
-        "Active": true,
-        "First Name": "Sarah",
-        "Rank": 5.720869704851459,
-        "Id": 63,
-        "Last Name": "Collins"
-    },
-    {
-        "Middle Initial": "E",
-        "Active": true,
-        "First Name": "Penelope",
-        "Rank": 7.872671813523109,
-        "Id": 64,
-        "Last Name": "East"
-    },
-    {
-        "Middle Initial": "E",
-        "Active": false,
-        "First Name": "Sarah",
-        "Rank": 2.3516792827121904,
+        "First Name": "Michael",
+        "Rank": 3.619174841907998,
         "Id": 65,
-        "Last Name": "East"
+        "Last Name": "Harris"
+    },
+    {
+        "Middle Initial": "B",
+        "Active": true,
+        "First Name": "Harry",
+        "Rank": 3.6595213742159296,
+        "Id": 66,
+        "Last Name": "Burns"
+    },
+    {
+        "Middle Initial": "S",
+        "Active": false,
+        "First Name": "Alex",
+        "Rank": 2.8947058814001276,
+        "Id": 67,
+        "Last Name": "Sizlack"
+    },
+    {
+        "Middle Initial": "S",
+        "Active": false,
+        "First Name": "John",
+        "Rank": 1.1766822936989203,
+        "Id": 68,
+        "Last Name": "Skywalker"
+    },
+    {
+        "Middle Initial": "B",
+        "Active": false,
+        "First Name": "Bill",
+        "Rank": 5.988676154092877,
+        "Id": 69,
+        "Last Name": "Bakker"
+    }
+]
+
+
+Displaying data from decompressed table:	table-2
+[
+    {
+        "Middle Initial": "D",
+        "Active": false,
+        "First Name": "Penelope",
+        "Rank": 2.89246300999027,
+        "Id": 70,
+        "Last Name": "Doe"
+    },
+    {
+        "Middle Initial": "Z",
+        "Active": false,
+        "First Name": "Lisa",
+        "Rank": 2.9051240590292764,
+        "Id": 71,
+        "Last Name": "Ziff"
+    },
+    {
+        "Middle Initial": "D",
+        "Active": true,
+        "First Name": "Alex",
+        "Rank": 3.8018617482323798,
+        "Id": 72,
+        "Last Name": "Doe"
+    },
+    {
+        "Middle Initial": "B",
+        "Active": false,
+        "First Name": "Tom",
+        "Rank": 7.602595490356448,
+        "Id": 73,
+        "Last Name": "Burns"
     },
     {
         "Middle Initial": "B",
         "Active": true,
         "First Name": "Jane",
-        "Rank": 10.192973895598326,
-        "Id": 66,
+        "Rank": 7.93045295281537,
+        "Id": 74,
         "Last Name": "Bakker"
     },
     {
-        "Middle Initial": "S",
+        "Middle Initial": "Z",
         "Active": false,
-        "First Name": "Alice",
-        "Rank": 3.8707790276313285,
-        "Id": 67,
-        "Last Name": "Sizlack"
+        "First Name": "Bob",
+        "Rank": 8.422790305761623,
+        "Id": 75,
+        "Last Name": "Ziff"
     },
     {
-        "Middle Initial": "J",
+        "Middle Initial": "H",
         "Active": true,
-        "First Name": "Martin",
-        "Rank": 3.292475408165761,
-        "Id": 68,
-        "Last Name": "Jones"
+        "First Name": "Bill",
+        "Rank": 8.524444056050609,
+        "Id": 76,
+        "Last Name": "Harris"
     },
-    {
-        "Middle Initial": "S",
-        "Active": false,
-        "First Name": "John",
-        "Rank": 1.319695659971516,
-        "Id": 69,
-        "Last Name": "Sizlack"
-    }
-]
-
-Converting JSON Array back into PersonList
-Records added back in = 10
-
-
-Fetched table 'table-2' from zip:	Size = 392
-Adding record to the compressed table holder
-Decompressing data
-[
     {
         "Middle Initial": "Z",
-        "Active": true,
-        "First Name": "Lisa",
-        "Rank": 8.107936414126923,
-        "Id": 70,
+        "Active": false,
+        "First Name": "Martin",
+        "Rank": 8.673991030412532,
+        "Id": 77,
         "Last Name": "Ziff"
+    },
+    {
+        "Middle Initial": "B",
+        "Active": true,
+        "First Name": "Michael",
+        "Rank": 7.915164515030927,
+        "Id": 78,
+        "Last Name": "Berkhiem"
     },
     {
         "Middle Initial": "C",
         "Active": false,
-        "First Name": "Tim",
-        "Rank": 10.531699792974736,
-        "Id": 71,
-        "Last Name": "Collins"
-    },
-    {
-        "Middle Initial": "E",
-        "Active": true,
-        "First Name": "Harry",
-        "Rank": 2.8928251085019463,
-        "Id": 72,
-        "Last Name": "East"
-    },
-    {
-        "Middle Initial": "M",
-        "Active": true,
-        "First Name": "Penelope",
-        "Rank": 2.2978989139023716,
-        "Id": 73,
-        "Last Name": "Montgomery"
-    },
-    {
-        "Middle Initial": "B",
-        "Active": true,
-        "First Name": "Danielle",
-        "Rank": 9.821628511481837,
-        "Id": 74,
-        "Last Name": "Bathory"
-    },
-    {
-        "Middle Initial": "S",
-        "Active": true,
-        "First Name": "Danielle",
-        "Rank": 9.405378915871934,
-        "Id": 75,
-        "Last Name": "Skywalker"
-    },
-    {
-        "Middle Initial": "S",
-        "Active": true,
-        "First Name": "Michael",
-        "Rank": 8.254335163389708,
-        "Id": 76,
-        "Last Name": "Simpson"
-    },
-    {
-        "Middle Initial": "E",
-        "Active": false,
-        "First Name": "Harry",
-        "Rank": 2.8773902737665265,
-        "Id": 77,
-        "Last Name": "East"
-    },
-    {
-        "Middle Initial": "E",
-        "Active": false,
-        "First Name": "Bill",
-        "Rank": 7.393887704782326,
-        "Id": 78,
-        "Last Name": "East"
-    },
-    {
-        "Middle Initial": "B",
-        "Active": true,
-        "First Name": "Elizabeth",
-        "Rank": 4.977577886007154,
+        "First Name": "Martina",
+        "Rank": 5.143365632350616,
         "Id": 79,
-        "Last Name": "Bathory"
+        "Last Name": "Collins"
     }
 ]
 
-Converting JSON Array back into PersonList
-Records added back in = 10
 
-
-Fetched table 'table-3' from zip:	Size = 386
-Adding record to the compressed table holder
-Decompressing data
+Displaying data from decompressed table:	table-3
 [
     {
-        "Middle Initial": "M",
+        "Middle Initial": "H",
         "Active": false,
-        "First Name": "Harry",
-        "Rank": 6.547409550838882,
+        "First Name": "Martin",
+        "Rank": 5.3603898856027925,
         "Id": 80,
-        "Last Name": "Montgomery"
+        "Last Name": "Hamilton"
     },
     {
         "Middle Initial": "S",
-        "Active": false,
-        "First Name": "Tim",
-        "Rank": 2.0566348166347836,
-        "Id": 81,
-        "Last Name": "Sizlack"
-    },
-    {
-        "Middle Initial": "D",
-        "Active": true,
-        "First Name": "Penelope",
-        "Rank": 7.702391319051513,
-        "Id": 82,
-        "Last Name": "Doe"
-    },
-    {
-        "Middle Initial": "E",
-        "Active": false,
-        "First Name": "Bill",
-        "Rank": 9.091490753436094,
-        "Id": 83,
-        "Last Name": "East"
-    },
-    {
-        "Middle Initial": "J",
-        "Active": true,
-        "First Name": "Michelle",
-        "Rank": 3.745148447983574,
-        "Id": 84,
-        "Last Name": "Jones"
-    },
-    {
-        "Middle Initial": "J",
         "Active": true,
         "First Name": "Sarah",
-        "Rank": 7.778651472894291,
-        "Id": 85,
-        "Last Name": "Jones"
-    },
-    {
-        "Middle Initial": "Z",
-        "Active": true,
-        "First Name": "Amy",
-        "Rank": 6.298087222516488,
-        "Id": 86,
-        "Last Name": "Ziff"
+        "Rank": 9.874032058434798,
+        "Id": 81,
+        "Last Name": "Simpson"
     },
     {
         "Middle Initial": "B",
         "Active": true,
         "First Name": "Martin",
-        "Rank": 9.036222706261013,
+        "Rank": 6.231607315711912,
+        "Id": 82,
+        "Last Name": "Baggins"
+    },
+    {
+        "Middle Initial": "Z",
+        "Active": true,
+        "First Name": "Peter",
+        "Rank": 6.046820682873804,
+        "Id": 83,
+        "Last Name": "Ziff"
+    },
+    {
+        "Middle Initial": "B",
+        "Active": true,
+        "First Name": "Peter",
+        "Rank": 7.812489296116974,
+        "Id": 84,
+        "Last Name": "Bakker"
+    },
+    {
+        "Middle Initial": "H",
+        "Active": true,
+        "First Name": "Dick",
+        "Rank": 1.9403092861850237,
+        "Id": 85,
+        "Last Name": "Hamilton"
+    },
+    {
+        "Middle Initial": "J",
+        "Active": true,
+        "First Name": "Mary",
+        "Rank": 6.353406355235451,
+        "Id": 86,
+        "Last Name": "Jones"
+    },
+    {
+        "Middle Initial": "H",
+        "Active": false,
+        "First Name": "Michael",
+        "Rank": 9.942561279336212,
         "Id": 87,
-        "Last Name": "Bathory"
+        "Last Name": "Hamilton"
+    },
+    {
+        "Middle Initial": "M",
+        "Active": true,
+        "First Name": "John",
+        "Rank": 10.444313335277798,
+        "Id": 88,
+        "Last Name": "Montgomery"
     },
     {
         "Middle Initial": "S",
         "Active": false,
-        "First Name": "Amy",
-        "Rank": 5.316820201825102,
-        "Id": 88,
-        "Last Name": "Skywalker"
-    },
-    {
-        "Middle Initial": "S",
-        "Active": true,
-        "First Name": "Alice",
-        "Rank": 6.823546603659368,
+        "First Name": "Mary",
+        "Rank": 2.860165818666651,
         "Id": 89,
-        "Last Name": "Skywalker"
+        "Last Name": "Sizlack"
     }
 ]
-
-Converting JSON Array back into PersonList
-Records added back in = 10

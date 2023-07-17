@@ -46,108 +46,75 @@ public class JsonPersistence {
         }
         
         
-        // Compress database
-        Map<String, byte[]> compressedDB = new HashMap<>();
-        for (Entry<String, PersonList> i : database.entrySet()) {
-            try {
-                
-                // Compress table and add to compressed version
-                JSONArray jsonArr = i.getValue().toJson();
-                byte[] tableCompressed = compression.compress(jsonArr.toString());
-                compressedDB.put(i.getKey(), tableCompressed);
-            }
-            catch ( Exception ex ) {
-                System.out.println("\nError compressing table:\t" + i.getKey() + "\n" + ex );
+        // Try compress the database
+        System.out.println("\nCompressing database");
+        Map<String, JSONArray> jsonDb;
+        Map<String, byte[]> compressedDB = null;
+        try {
+            
+            // Compress
+            jsonDb = mainUtil.personDbToJson(database);
+            compressedDB = compression.compressDB(jsonDb);
+            
+            // Scope out
+            for (Entry<String, byte[] > i : compressedDB.entrySet()) {
+                System.out.println("Table '" + i.getKey() + "' Compressed Size:\t" + i.getValue().length);
             }
         }
-        
-        // Scope out
-        for (Entry< String, byte[] > i : compressedDB.entrySet()) {
-            System.out.println("Table '" + i.getKey() + "' Compressed Size:\t" + i.getValue().length);
+        catch ( Exception ex ) {
+            System.out.println("\nError compressing database");
         }
         
         
-        // Initialize required vars
+        // Try zip data
         String dbOut = "personDB.out.zip";
-        FileOutputStream fileOut;
-        ZipOutputStream zipOut;
+        boolean zipState = false;
+        if ( compressedDB != null ) {
+            
+            // Zip
+            System.out.println("\nZipping Database to file");
+            zipState = compression.zipDatabase(compressedDB, dbOut);
+            System.out.println("Zip state:\t" + zipState);
+        }
+        else {
+            System.out.println("\nSkipping zip as compression failed");
+        }
+
         
-        // Compress
-        System.out.println("\nZipping DB to file:\t" + dbOut);
-        try {
+        // Try unzip the data
+        if ( zipState ) {
             
-            // Initialize stream handlers
-            System.out.println("Initializing output file handlers");
-            fileOut = new FileOutputStream(dbOut);
-            zipOut = new ZipOutputStream( new BufferedOutputStream(fileOut));
+            // Log and initialize vars
+            System.out.println("\nAttempting to unzip database:\t" + dbOut);
+            Map<String, byte[]> dbDecompressed;
+            Map<String, JSONArray> dbDecompressedJson;
+            Map<String, PersonList> dbRebuild;
             
-            // Add each compressed table
-            System.out.println("Adding each table to output zip");
-            for (Entry<String, byte[]> table: compressedDB.entrySet() ) {
-                
-                // Create a zip entry for active table
-                ZipEntry zipElm = new ZipEntry(table.getKey());
-                System.out.println("Processing table:\t" + zipElm.getName());
-                
-                // Add element to zip
-                zipElm.setSize(table.getValue().length);
-                zipOut.putNextEntry(zipElm);
-                zipOut.write(table.getValue());
-                zipOut.flush();
-                zipOut.closeEntry();
+            // As compressed
+            dbDecompressed = compression.unzipDatabase(dbOut);
+            boolean decompState = dbDecompressed != null;
+            System.out.println("Unzip state:\t" + decompState);
+            
+            // As json
+            dbDecompressedJson = compression.unzipToJson(dbOut);
+            decompState = dbDecompressedJson != null;
+            System.out.println("Decompression to Json state:\t" + decompState);
+            
+            // As DB
+            dbRebuild = mainUtil.jsonDbToPersonList(dbDecompressedJson);
+            decompState = dbRebuild != null;
+            System.out.println("Rebuild to PersonList DB State: \t" + decompState);
+            
+            // Print if valid
+            if ( decompState ) {
+                for ( Entry<String, PersonList> table : dbRebuild.entrySet() ) {
+                    System.out.println("\n\nDisplaying data from decompressed table:\t" + table.getKey());
+                    System.out.println(table.getValue().toJson().toString(4));
+                }
             }
-            
-            // Close output zip stream
-            System.out.println("\nCompression complete, closing output zip handler");
-            zipOut.close();
         }
-        catch (Exception ex) {
-            System.out.println("\nError zipping DB to file:\n" + ex);
-        }
-        
-        
-        /**
-         * Unzip
-        */
-        
-        // Initialize vars
-        System.out.println("\nUnzipping:\t" + dbOut);
-        Map<String, byte[]> decompressedDB = new HashMap();
-        Map<String, PersonList> decompressedData = new HashMap();
-        try {
-            
-            // Rebuild compressed DB
-            ZipInputStream zipIn = new ZipInputStream(new FileInputStream(dbOut));
-            ZipEntry zipElm;
-            while ( ( zipElm = zipIn.getNextEntry() ) != null ) {
-                
-                // Fetch data
-                String tableName = zipElm.getName();
-                byte[] tableData = zipIn.readAllBytes();
-                System.out.println("\nFetched table '" + tableName + "' from zip:\tSize = " + tableData.length);
-                
-                // Add to compressed holder
-                System.out.println("Adding record to the compressed table holder");
-                decompressedDB.put(tableName, tableData);
-                
-                // Decompress to JSON
-                System.out.println("Decompressing data");
-                JSONArray decompData = new JSONArray(compression.decompress(tableData));
-                System.out.println(decompData.toString(4));
-                
-                // Convert back into table
-                System.out.println("Converting JSON Array back into PersonList");
-                PersonList decompressed = new PersonList(decompData);
-                decompressedData.put(tableName, decompressed);
-                System.out.println("Records added back in = " + decompressed.getPersonList().size());
-            }
-            
-            // Close input stream handlers
-            zipIn.closeEntry();
-            zipIn.close();
-        }
-        catch ( Exception ex) {
-            System.out.println("\nError unzipping database:\n\n" + ex);
+        else {
+            System.out.println("\nSkipping unzip as zip failed");
         }
     }
 }
